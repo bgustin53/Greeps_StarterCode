@@ -115,7 +115,7 @@ public abstract class Creature extends Actor
         }
         else {
             atWater = false;
-            setLocation(x, y);
+            super.setLocation(x, y);
         }
         
         if(timeToSpit > 0)
@@ -309,5 +309,12 @@ public abstract class Creature extends Actor
             throw new IllegalArgumentException("flag number must be either 1 or 2");
         else 
             return flags[flagNo-1];
+    }
+    
+    /**
+     * Designed to disable setLocation of Actor class
+     */
+    public void setLocation(int ignoreX, int ignoreY)
+    {
     }
 }
