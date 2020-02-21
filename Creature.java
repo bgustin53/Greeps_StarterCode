@@ -62,9 +62,9 @@ public abstract class Creature extends Actor
      */
     public void turnHome()
     {
-        int deltaX = ship.getX() - getX();
-        int deltaY = ship.getY() - getY();
-        setRotation((int) (180 * Math.atan2(deltaY, deltaX) / Math.PI));
+        int dX = ship.getX() - getX();
+        int dY = ship.getY() - getY();
+        setRotation((int) (180 * Math.atan2(dY, dX) / Math.PI));
     }
     
     
@@ -143,12 +143,12 @@ public abstract class Creature extends Actor
         // check whether there's a tomato pile here
         TomatoPile tomatoes = (TomatoPile) getOneIntersectingObject(TomatoPile.class);
         // check whether there's another creature here
-        Creature greep = (Creature) getOneIntersectingObject(Creature.class);
+        Creature anotherGreep = (Creature) getOneIntersectingObject(Creature.class);
 
-        if(greep != null && tomatoes != null) {
-            if(!greep.carryingTomato()) {
+        if(anotherGreep != null && tomatoes != null) {
+            if(!anotherGreep.carryingTomato()) {
                 tomatoes.takeOne();
-                greep.carryTomato();
+                anotherGreep.carryTomato();
             }
         }
     }
