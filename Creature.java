@@ -317,4 +317,9 @@ public abstract class Creature extends Actor
     public void setLocation(int ignoreX, int ignoreY)
     {
     }
+    
+    public void move(int ignore)
+    {
+        move();
+    }
 }
