@@ -10,7 +10,7 @@ import greenfoot.*;
  */
 public class Timer extends Counter
 {
-    private static final int GAME_TIME = 30;
+    private static final int GAME_TIME = 18;
     
     private int tick;
     

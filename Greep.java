@@ -76,11 +76,6 @@ public class Greep extends Creature
      */
     public String getCurrentImage()
     {
-        if (carryingTomato()) {
-            return "greep-with-food.png";
-        }
-        else {
-            return "greep.png";
-        }
+        return carryingTomato() ? "greep-with-food.png" : "greep.png";
     }
 }
